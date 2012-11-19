@@ -61,3 +61,15 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/ruby-matchit"]
+	path = bundle/ruby-matchit
+	url = https://github.com/vim-scripts/ruby-matchit.git
+[submodule "bundle/rubytest"]
+	path = bundle/rubytest
+	url = https://github.com/janx/vim-rubytest.git

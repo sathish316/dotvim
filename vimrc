@@ -6,6 +6,7 @@ filetype plugin indent on
 set nu
 	"tabstop
 set tabstop=2
+set shiftwidth=2
 	"default colorscheme
 colorscheme zenburn
   "nerdtree settings
@@ -27,4 +28,12 @@ let g:ctrlp_cmd = 'CtrlP'
 	"search
 set hlsearch
 set incsearch
-	
+	"ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp
+	"vim-rubytest config	
+let g:rubytest_cmd_test = "bundle exec ruby %p"
+let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
+let g:rubytest_cmd_spec = "bundle exec spec -f specdoc %p"
+let g:rubytest_cmd_example = "bundle exec spec -f specdoc %p -e '%c'"
+let g:rubytest_cmd_feature = "bundle exec cucumber %p"
+let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
