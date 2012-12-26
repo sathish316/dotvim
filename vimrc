@@ -8,10 +8,18 @@ set nu
 set tabstop=2
 set shiftwidth=2
 	"default colorscheme
-colorscheme zenburn
+"colorscheme zenburn
+colorscheme codeschool
+"colorscheme github
+"colorscheme textmate16
   "nerdtree settings
 autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+silent! nmap <C-b> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeFind<CR>
+"let g:NERDTreeMapActivateNode="<F3>"
+"let g:NERDTreeMapPreview="<F4>"
   "folding
 set foldmethod=indent
 set foldlevel=99
@@ -37,3 +45,10 @@ let g:rubytest_cmd_spec = "bundle exec spec -f specdoc %p"
 let g:rubytest_cmd_example = "bundle exec spec -f specdoc %p -e '%c'"
 let g:rubytest_cmd_feature = "bundle exec cucumber %p"
 let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
+	"vim ctags shortcuts for split and vsplit
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+	"auto save on lose focus
+autocmd BufLeave,FocusLost * silent! wall
+	"vim sessions
+let g:session_autosave=1
+let g:session_autoload=1
