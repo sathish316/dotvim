@@ -7,9 +7,12 @@ set nu
 	"tabstop
 set tabstop=2
 set shiftwidth=2
+set expandtab
+set smartindent
 	"default colorscheme
 "colorscheme zenburn
 colorscheme codeschool
+"colorscheme solarized
 "colorscheme github
 "colorscheme textmate16
   "nerdtree settings
@@ -29,7 +32,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 	"ack
-nmap <leader>a <Esc>:Ack!
+nmap <leader>a <Esc>:Ack<space>
 	"ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -45,8 +48,15 @@ let g:rubytest_cmd_spec = "bundle exec spec -f specdoc %p"
 let g:rubytest_cmd_example = "bundle exec spec -f specdoc %p -e '%c'"
 let g:rubytest_cmd_feature = "bundle exec cucumber %p"
 let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
+	"vim-rubytest config	with spork
+let g:rubytest_cmd_test = "testdrb %p"
+let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
 	"vim ctags shortcuts for split and vsplit
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+	"vim regenerate ctags for current project and all gems in current gemset
+map <Leader>r :!ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+map <Leader>rts :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/sc-*<CR><CR>
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 	"auto save on lose focus
 autocmd BufLeave,FocusLost * silent! wall
 	"vim sessions
