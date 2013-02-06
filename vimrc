@@ -15,10 +15,16 @@ colorscheme codeschool
 "colorscheme solarized
 "colorscheme github
 "colorscheme textmate16
+"colorscheme railscasts
+" colorscheme lucius
   "nerdtree settings
-autocmd vimenter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+if &diff
+	colorscheme 256-grayvim
+else
+	autocmd vimenter * NERDTree
+	autocmd VimEnter * wincmd p
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+endif
 silent! nmap <C-b> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 "let g:NERDTreeMapActivateNode="<F3>"
@@ -36,6 +42,9 @@ nmap <leader>a <Esc>:Ack<space>
 	"ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+map <c-m> :CtrlPBufTag<CR>
+map <c-n> :CtrlPTag<CR>
+map <c-e> :CtrlPMRUFiles<CR>
 	"search
 set hlsearch
 set incsearch
@@ -54,7 +63,7 @@ let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
 	"vim ctags shortcuts for split and vsplit
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 	"vim regenerate ctags for current project and all gems in current gemset
-map <Leader>r :!ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+map <Leader>r :!ctags --extra=+f --exclude=.git --exclude=log --exclude=test --exclude=app/views -R *<CR><CR>
 map <Leader>rts :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/sc-*<CR><CR>
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 	"auto save on lose focus
@@ -62,3 +71,13 @@ autocmd BufLeave,FocusLost * silent! wall
 	"vim sessions
 let g:session_autosave=1
 let g:session_autoload=1
+  "tagbar toggle
+nmap <F8> :TagbarToggle<CR>
+  "resize windows
+map + <C-W>+
+map - <C-W>-
+  "vim ruby debugger
+let g:ruby_debugger_progname = 'mvim'
+  "vimrc tips from stackoverflow and r/vim
+  "make y behave like other capitals
+nnoremap Y y$
