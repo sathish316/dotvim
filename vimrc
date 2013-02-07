@@ -10,20 +10,19 @@ set shiftwidth=2
 set expandtab
 set smartindent
 	"default colorscheme
+set background=dark
 " colorscheme zenburn
 " colorscheme codeschool
 " colorscheme github
 " colorscheme textmate16
 " colorscheme railscasts
-" colorscheme lucius
-
+colorscheme lucius
 " solarized-dark settings
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+" let g:solarized_termcolors=256
+" colorscheme solarized
+" colorscheme blackboard
   "nerdtree settings
 if &diff
-	colorscheme 256-grayvim
 else
 	autocmd vimenter * NERDTree
 	autocmd VimEnter * wincmd p

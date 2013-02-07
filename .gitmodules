@@ -49,9 +49,6 @@
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "vim-addon-mw-utils"]
-	path = vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
@@ -79,33 +76,27 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
-[submodule "bundle/vim-jade"]
-	path = bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
-[submodule "bundle/vim-session"]
-	path = bundle/vim-session
-	url = https://github.com/xolox/vim-session
+; [submodule "bundle/vim-session"]
+; 	path = bundle/vim-session
+; 	url = https://github.com/xolox/vim-session
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
+; [submodule "bundle/syntastic"]
+; 	path = bundle/syntastic
+; 	url = git://github.com/scrooloose/syntastic.git
 ; [submodule "bundle/tagbar"]
 ; 	path = bundle/tagbar
 ; 	url = git://github.com/majutsushi/tagbar
-[submodule "bundle/ri"]
-	path = bundle/ri
-	url = git://github.com/danchoi/ri.vim.git
+; [submodule "bundle/ri"]
+; 	path = bundle/ri
+; 	url = git://github.com/danchoi/ri.vim.git
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = git://github.com/skammer/vim-css-color.git
-[submodule "bundle/vim-solarized"]
-	path = bundle/vim-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/nyancat"]
+	path = bundle/nyancat
+	url = git://github.com/koron/nyancat-vim.git
