@@ -19,6 +19,7 @@ set background=dark
 colorscheme lucius
 " solarized-dark settings
 " let g:solarized_termcolors=256
+" set background=dark
 " colorscheme solarized
 " colorscheme blackboard
   "nerdtree settings
@@ -55,6 +56,12 @@ set hlsearch
 set incsearch
 	"ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp
+  "vim-ruby autocomplete options
+if has("autocmd")
+  autocmd FileType ruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby let g:rubycomplete_buffer_loading=1
+  autocmd FileType ruby let g:rubycomplete_classes_in_global=1
+endif
 	"vim-rubytest config	
 let g:rubytest_cmd_test = "bundle exec ruby %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"

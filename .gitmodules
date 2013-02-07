@@ -100,3 +100,6 @@
 [submodule "bundle/nyancat"]
 	path = bundle/nyancat
 	url = git://github.com/koron/nyancat-vim.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
