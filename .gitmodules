@@ -103,3 +103,12 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/TaskList"]
+	path = bundle/TaskList
+	url = git://github.com/vim-scripts/TaskList.vim.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vim-vroom"]
+	path = bundle/vim-vroom
+	url = git://github.com/skalnik/vim-vroom.git
