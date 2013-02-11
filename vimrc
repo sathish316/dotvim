@@ -32,10 +32,7 @@ endif
 silent! nmap <C-b> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 "disable arrows in terminal vim
-if has('gui_running')
-else
-	let g:NERDTreeDirArrows=0
-end
+let g:NERDTreeDirArrows=0
 "let g:NERDTreeMapActivateNode="<F3>"
 "let g:NERDTreeMapPreview="<F4>"
   "folding
@@ -66,10 +63,6 @@ if has("autocmd")
   autocmd FileType ruby let g:rubycomplete_classes_in_global=1
 endif
 	"vim-rubytest config	
-map <Leader>\ <Plug>RubyTestRun     " change from <Leader>t to <Leader>\
-" map <Leader>] <Plug>RubyFileRun     " change from <Leader>T to <Leader>]
-" map <Leader>/ <Plug>RubyTestRunLast " change from <Leader>l to <Leader>/
-let g:rubytest_in_quickfix = 0
 let g:rubytest_cmd_test = "bundle exec ruby %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
 let g:rubytest_cmd_spec = "bundle exec spec -f specdoc %p"
@@ -95,13 +88,6 @@ let g:session_autoload=1
   "resize windows
 map + <C-W>+
 map - <C-W>-
-  "Task list
-map T :TaskList<CR>
-  "Toggle Tag list view
-map P :TlistToggle<CR>
   "vimrc tips from stackoverflow and r/vim
   "make y behave like other capitals
 nnoremap Y y$
-  "shortcuts for horizontal and vertical split
-map | :vertical-split<CR>
-map - :split<CR>

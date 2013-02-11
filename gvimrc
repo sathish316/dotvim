@@ -12,6 +12,9 @@ colorscheme codeschool
 " set background=dark
 " colorscheme solarized
 
+" enable arrows in gvim/macvim
+let g:NERDTreeDirArrows=1
+
 "default macvim font
 " set guifont=Monaco:h12
 " set guifont=AnonymousPro:h12
