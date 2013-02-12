@@ -32,7 +32,10 @@ endif
 silent! nmap <C-b> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 "disable arrows in terminal vim
+if has('gui_running')
+else
 let g:NERDTreeDirArrows=0
+end
 "let g:NERDTreeMapActivateNode="<F3>"
 "let g:NERDTreeMapPreview="<F4>"
   "folding
@@ -88,6 +91,11 @@ let g:session_autoload=1
   "resize windows
 map + <C-W>+
 map - <C-W>-
+  "switch plugin to switch code constructs like if vs unless, or vs and etc
+nnoremap - :Switch<cr>
+  "sideways plugin to switch argument order
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
   "vimrc tips from stackoverflow and r/vim
   "make y behave like other capitals
 nnoremap Y y$

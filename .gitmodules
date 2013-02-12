@@ -103,3 +103,9 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/switch"]
+	path = bundle/switch
+	url = https://github.com/AndrewRadev/switch.vim
+[submodule "bundle/sideways"]
+	path = bundle/sideways
+	url = git://github.com/AndrewRadev/sideways.vim.git
