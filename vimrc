@@ -30,7 +30,7 @@ else
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 endif
 silent! nmap <C-b> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
+silent! map <F3> :NERDTree<CR>:NERDTreeFind<CR>
 "disable arrows in terminal vim
 if has('gui_running')
 else
@@ -76,7 +76,9 @@ let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
 let g:rubytest_cmd_test = "testdrb %p"
 let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
 	"vim ctags shortcuts for split and vsplit
+"C-W C-] open in horizontal split
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" fix vertical split map <C-V C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 	"vim regenerate ctags for current project and all gems in current gemset
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log --exclude=test --exclude=app/views -R *<CR><CR>
 map <Leader>rts :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/sc-*<CR><CR>
@@ -96,6 +98,25 @@ nnoremap - :Switch<cr>
   "sideways plugin to switch argument order
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
+  "xml formatting
+map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
+  "vimux and vimux-ruby-test keymap
+map <Leader>s :RunRubyFocusedTest<CR>
+map <Leader>S :RunAllRubyTests<CR>
   "vimrc tips from stackoverflow and r/vim
   "make y behave like other capitals
 nnoremap Y y$
+  "Treat underscore as word boundary NOTWORKING
+" set iskeyword-=_ 
+  "Use Cmd-1, Cmd-2, Cmd-3 to switch tabs
+map <D-1> 1gt 
+map <D-2> 2gt 
+map <D-3> 3gt 
+map <D-4> 4gt 
+map <D-5> 5gt 
+map <D-6> 6gt 
+map <D-7> 7gt 
+map <D-8> 8gt 
+map <D-9> 9gt 
+  "EasyMotion leader mapping
+" let g:EasyMotion_leader_key = '<Leader>'

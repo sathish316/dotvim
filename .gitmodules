@@ -109,3 +109,15 @@
 [submodule "bundle/sideways"]
 	path = bundle/sideways
 	url = git://github.com/AndrewRadev/sideways.vim.git
+[submodule "bundle/hjkl"]
+	path = bundle/hjkl
+	url = git://github.com/vim-scripts/HJKL.git
+[submodule "bundle/vimux-ruby-test"]
+	path = bundle/vimux-ruby-test
+	url = git://github.com/pgr0ss/vimux-ruby-test.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vimroom"]
+	path = bundle/vimroom
+	url = git://github.com/mikewest/vimroom.git
