@@ -142,3 +142,12 @@
 [submodule "bundle/CamelCaseMotion"]
 	path = bundle/CamelCaseMotion
 	url = git://github.com/bkad/CamelCaseMotion.git
+[submodule "bundle/vim-text-object"]
+	path = bundle/vim-text-object
+	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "bundle/vim-textobj-rubyblock"]
+	path = bundle/vim-textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
