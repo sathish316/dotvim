@@ -124,3 +124,21 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vimux-cucumber"]
+	path = bundle/vimux-cucumber
+	url = https://github.com/cloud8421/vimux-cucumber.git
+[submodule "bundle/vim-cuke"]
+	path = bundle/vim-cuke
+	url = git://github.com/tpope/vim-cucumber.git
+[submodule "bundle/vim-bundler"]
+	path = bundle/vim-bundler
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "bundle/vim-indent-object"]
+	path = bundle/vim-indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/narrow-region"]
+	path = bundle/narrow-region
+	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule "bundle/CamelCaseMotion"]
+	path = bundle/CamelCaseMotion
+	url = git://github.com/bkad/CamelCaseMotion.git

@@ -18,9 +18,9 @@ set background=dark
 " colorscheme railscasts
 colorscheme lucius
 " solarized-dark settings
-" let g:solarized_termcolors=256
-" set background=dark
-" colorscheme solarized
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 " colorscheme blackboard
   "nerdtree settings
 if &diff
@@ -30,7 +30,7 @@ else
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 endif
 silent! nmap <C-b> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTree<CR>:NERDTreeFind<CR>
+silent! map <F3> :NERDTreeFind<CR>
 "disable arrows in terminal vim
 if has('gui_running')
 else
@@ -68,21 +68,24 @@ endif
 	"vim-rubytest config	
 let g:rubytest_cmd_test = "bundle exec ruby %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
-let g:rubytest_cmd_spec = "bundle exec spec -f specdoc %p"
-let g:rubytest_cmd_example = "bundle exec spec -f specdoc %p -e '%c'"
+let g:rubytest_cmd_spec = "bundle exec rspec -f specdoc %p"
+let g:rubytest_cmd_example = "bundle exec rspec -f specdoc %p -e '%c'"
 let g:rubytest_cmd_feature = "bundle exec cucumber %p"
 let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
 	"vim-rubytest config	with spork
-let g:rubytest_cmd_test = "testdrb %p"
-let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
+" let g:rubytest_cmd_test = "testdrb %p"
+" let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
+  "vim-rubytest key bindings
+map <Leader>t <Plug>RubyTestRun
+map <Leader>T <Plug>RubyFileRun
+map <Leader>l <Plug>RubyTestRunLast
 	"vim ctags shortcuts for split and vsplit
 "C-W C-] open in horizontal split
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " fix vertical split map <C-V C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 	"vim regenerate ctags for current project and all gems in current gemset
-map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log --exclude=test --exclude=app/views -R *<CR><CR>
-map <Leader>rts :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/sc-*<CR><CR>
-map <Leader>rta :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+map <Leader>tt :!bundle show --paths <bar> xargs ctags -R && ctags -R -a *<CR><CR>
+map <Leader>ta :!ctags -R -a *<CR><CR>
 	"auto save on lose focus
 autocmd BufLeave,FocusLost * silent! wall
 	"vim sessions
@@ -103,6 +106,8 @@ map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
   "vimux and vimux-ruby-test keymap
 map <Leader>s :RunRubyFocusedTest<CR>
 map <Leader>S :RunAllRubyTests<CR>
+map <Leader>c :RunFocusedCuke<CR>
+map <Leader>C :RunAllCukes<CR>
   "vimrc tips from stackoverflow and r/vim
   "make y behave like other capitals
 nnoremap Y y$
@@ -118,5 +123,27 @@ map <D-6> 6gt
 map <D-7> 7gt 
 map <D-8> 8gt 
 map <D-9> 9gt 
+  "shell command to load aliased
+set shell=/bin/bash\ --rcfile\ ~/.bash_profile
   "EasyMotion leader mapping
 " let g:EasyMotion_leader_key = '<Leader>'
+  "Fold all comments
+  "zM to fold/toggle comments
+"autocmd FileType ruby,eruby
+"      \ set foldmethod=expr |
+"      \ set foldexpr=getline(v:lnum)=~'^\\s*#'
+  "Move line up or down in normal, insert and visual mode
+  nnoremap <D-j> :m .+1<CR>==
+  nnoremap <D-k> :m .-2<CR>==
+
+  inoremap <D-j> <Esc>:m .+1<CR>==gi
+  inoremap <D-k> <Esc>:m .-2<CR>==gi
+
+  vnoremap <D-j> :m '>+1<CR>gv=gv
+  vnoremap <D-k> :m '<-2<CR>gv=gv
+
+  "automatically leave insert mode after few seconds of inactivity (15s)
+au CursorHoldI * stopinsert
+au InsertEnter * let updaterestore=&updatetime | set updatetime=30000
+au InsertLeave * let &updatetime=updaterestore
+ 
