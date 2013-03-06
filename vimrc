@@ -104,8 +104,12 @@ nnoremap <c-l> :SidewaysRight<cr>
   "xml formatting
 map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
   "vimux and vimux-ruby-test keymap
+"Run unit test - testunit
 map <Leader>s :RunRubyFocusedTest<CR>
 map <Leader>S :RunAllRubyTests<CR>
+"Run unit test - rspec, shoulda
+map <Leader>d :RunRubyFocusedContext<CR>
+"Run cuke test
 map <Leader>c :RunFocusedCuke<CR>
 map <Leader>C :RunAllCukes<CR>
   "vimrc tips from stackoverflow and r/vim
@@ -147,3 +151,26 @@ au CursorHoldI * stopinsert
 au InsertEnter * let updaterestore=&updatetime | set updatetime=30000
 au InsertLeave * let &updatetime=updaterestore
  
+  "Vim Ruby Tips from http://jetpackweb.com/blog/2010/02/15/vim-tips-for-ruby/
+" bind control-l to hashrocket
+imap <C-j> <Space>=><Space>"
+" convert word into ruby symbol
+imap <C-k> <C-o>b:<Esc>Ea
+nmap <C-k> lbi:<Esc>E
+" Easier non-interactive command insertion
+nnoremap <Space> :
+" macro to convert test unit test to shoulda test
+map ,shd 0^V:s/def test_/should "/A"0f"vi":s/_/ /g
+"vimgutter config
+let g:gitgutter_enabled = 1
+"vimux-ruby-test config
+if $TESTDRB == 'y'
+  let g:vimux_ruby_cmd_unit_test = "testdrb"
+  let g:vimux_ruby_cmd_all_tests = "testdrb"
+  let g:vimux_ruby_cmd_context = "testdrb"
+else
+  let g:vimux_ruby_cmd_unit_test = "bundle exec ruby"
+  let g:vimux_ruby_cmd_all_tests = "bundle exec ruby"
+  let g:vimux_ruby_cmd_context = "bundle exec ruby"
+endif
+
