@@ -2,3 +2,4 @@
 *.swp
 sessions
 tmp
+plugin/vitunes.vim
