@@ -66,6 +66,7 @@ if has("autocmd")
   autocmd FileType ruby let g:rubycomplete_classes_in_global=1
 endif
 	"vim-rubytest config	
+" let g:rubytest_in_quickfix = 1
 let g:rubytest_cmd_test = "bundle exec ruby %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
 let g:rubytest_cmd_spec = "bundle exec rspec -f specdoc %p"
@@ -160,7 +161,9 @@ nmap <C-k> lbi:<Esc>E
 " Easier non-interactive command insertion
 nnoremap <Space> :
 " macro to convert test unit test to shoulda test
-map ,shd 0^V:s/def test_/should "/A"0f"vi":s/_/ /g
+map ,shd 0^V:s/def test_/should "/A" do0f"vi":s/_/ /g
+" macro to add pry debugging line above current line
+map ,b ^Obinding.pry
 "vimgutter config
 let g:gitgutter_enabled = 1
 "vimux-ruby-test config
@@ -173,4 +176,5 @@ else
   let g:vimux_ruby_cmd_all_tests = "bundle exec ruby"
   let g:vimux_ruby_cmd_context = "bundle exec ruby"
 endif
-
+"vim-slime settings
+let g:slime_target = "tmux"
