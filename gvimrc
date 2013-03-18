@@ -23,7 +23,11 @@ colorscheme codeschool
 "default macvim font
 " set guifont=Monaco:h12
 " set guifont=AnonymousPro:h12
+if $PLINE == 'y'
+set guifont=Inconsolata-dz\ for\ Powerline:h12
+else
 set guifont=Inconsolata:h14
+end
 " set guifont=DejaVuSansMono:h12
 
 "window settings

@@ -48,11 +48,12 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 	"ack
 nmap <leader>a <Esc>:Ack<space>
+noremap <Leader><Leader>a :Ack <cword><cr>
 	"ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <c-m> :CtrlPBufTag<CR>
-map <c-n> :CtrlPTag<CR>
+map <c-s> :CtrlPTag<CR>
 map <c-e> :CtrlPMRUFiles<CR>
 	"search
 set hlsearch
@@ -67,15 +68,18 @@ if has("autocmd")
 endif
 	"vim-rubytest config	
 " let g:rubytest_in_quickfix = 1
+	"vim-rubytest config	with spork
+if $TESTDRB == 'y'
+let g:rubytest_cmd_test = "testdrb %p"
+let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
+else
 let g:rubytest_cmd_test = "bundle exec ruby %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
+end
 let g:rubytest_cmd_spec = "bundle exec rspec -f specdoc %p"
 let g:rubytest_cmd_example = "bundle exec rspec -f specdoc %p -e '%c'"
 let g:rubytest_cmd_feature = "bundle exec cucumber %p"
 let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
-	"vim-rubytest config	with spork
-" let g:rubytest_cmd_test = "testdrb %p"
-" let g:rubytest_cmd_testcase = "testdrb %p -n '/%c/'"
   "vim-rubytest key bindings
 map <Leader>t <Plug>RubyTestRun
 map <Leader>T <Plug>RubyFileRun
@@ -178,3 +182,9 @@ else
 endif
 "vim-slime settings
 let g:slime_target = "tmux"
+"vim-powerline settings
+if $PLINE == 'y'
+  set encoding=utf-8 
+  set fillchars+=stl:\ ,stlnc:\
+  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+end
