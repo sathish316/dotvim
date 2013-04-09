@@ -135,7 +135,7 @@ map <D-9> 9gt
   "shell command to load aliased
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile
   "EasyMotion leader mapping
-" let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = 'm'
   "Fold all comments
   "zM to fold/toggle comments
 "autocmd FileType ruby,eruby
@@ -188,3 +188,7 @@ if $PLINE == 'y'
   set fillchars+=stl:\ ,stlnc:\
   set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 end
+"git-undo visually selected line using fugitive
+" vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
+	"vim-dispatch shortcut
+nmap <leader>r <Esc>:Dispatch<space>
