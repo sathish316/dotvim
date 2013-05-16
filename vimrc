@@ -47,8 +47,11 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 	"ack
-nmap <leader>a <Esc>:Ack<space>
-noremap <Leader><Leader>a :Ack <cword><cr>
+" nmap <leader>a <Esc>:Ack<space>
+" noremap <Leader><Leader>a :Ack <cword><cr>
+  "ag
+nmap <leader>a <Esc>:Ag<space>
+noremap <Leader><Leader>a :Ag <cword><cr>
 	"ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -104,8 +107,8 @@ map - <C-W>-
   "switch plugin to switch code constructs like if vs unless, or vs and etc
 nnoremap - :Switch<cr>
   "sideways plugin to switch argument order
-nnoremap <c-h> :SidewaysLeft<cr>
-nnoremap <c-l> :SidewaysRight<cr>
+map <Leader>h :SidewaysLeft<cr>
+map <Leader>l :SidewaysRight<cr>
   "xml formatting
 map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
   "vimux and vimux-ruby-test keymap
@@ -192,3 +195,11 @@ end
 " vmap <silent> u <esc>:Gdiff<cr>gv:diffget<cr><c-w><c-w>ZZ
 	"vim-dispatch shortcut
 nmap <leader>r <Esc>:Dispatch<space>
+"natural vim splits - open splits to the right and bottom
+set splitbelow
+set splitright
+"pretty format json using gg=G
+au FileType json setlocal equalprg=python\ -m\ json.tool
+"auto-save options
+let g:auto_save = 1
+"let g:auto_save_no_updatetime = 1 

@@ -187,3 +187,15 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-symbols-strings"]
+	path = bundle/vim-symbols-strings
+	url = git://github.com/rorymckinley/vim-symbols-strings.git
+[submodule "bundle/auto-save"]
+	path = bundle/auto-save
+	url = git://github.com/907th/vim-auto-save.git
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = git://github.com/rking/ag.vim.git
